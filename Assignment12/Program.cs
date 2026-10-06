@@ -1,12 +1,36 @@
 ﻿using Assignment12.task1;
 using Assignment12.task2;
 using Assignment12.task4;
+using Assignment12.task5;
 
 namespace Assignment12
 {
     internal class Program
     {
 
+        public static void task5()
+        {
+            Queue<string> queue = new Queue<string>();
+
+            queue.Enqueue("Report.pdf");
+            queue.Enqueue("Invoice.pdf");
+            queue.Enqueue("Letter.docx");
+            queue.Enqueue("Resume.pdf");
+            queue.Enqueue("Photo.jpg");
+
+            QueueHelper<string>.printContentAndCount(queue);
+
+            QueueHelper<string>.PeekItem(queue);
+
+            QueueHelper<String>.Dequeue(queue);
+            QueueHelper<String>.Dequeue(queue);
+            QueueHelper<String>.Dequeue(queue);
+            QueueHelper<String>.Dequeue(queue);
+            QueueHelper<String>.Dequeue(queue);
+
+
+            QueueHelper<String>.Dequeue(queue);
+        }
         public static void task4()
         {
             HashSet<string> emails =
@@ -33,43 +57,45 @@ namespace Assignment12
 
             Console.WriteLine("========IsSubsetOf========");
 
-            Console.WriteLine( setA.IsSubsetOf(new int[] { 1,2}));
+            Console.WriteLine(setA.IsSubsetOf(new int[] { 1, 2 }));
 
         }
         public static void task3()
         {
-            Dictionary<string,int>Contacts=new Dictionary<string,int>();
+            Dictionary<string, int> Contacts = new Dictionary<string, int>();
 
             Contacts["ahmed"] = 0100123456;
-            Contacts["bassem"] =0110234567;
+            Contacts["bassem"] = 0110234567;
             Contacts["kamel"] = 0120345678;
-            Contacts["hassan"]= 0120456789;
+            Contacts["hassan"] = 0120456789;
             Console.WriteLine("=============Adding duplicate============");
             try
             {
 
-            Contacts.Add("hassan", 01001777772);
-            }catch(Exception e) {Console.WriteLine(e);}
+                Contacts.Add("hassan", 01001777772);
+            }
+            catch (Exception e) { Console.WriteLine(e); }
 
             Console.WriteLine("==========Try adding duplicate===============");
 
-           Console.WriteLine( Contacts.TryAdd("hassan", 01001777772));
+            Console.WriteLine(Contacts.TryAdd("hassan", 01001777772));
 
 
             Console.WriteLine("==========Accessing non existant key===============");
             try
             {
 
-            Console.WriteLine(Contacts["gamal"]);
-            }catch(Exception e) {Console.WriteLine(e);}
+                Console.WriteLine(Contacts["gamal"]);
+            }
+            catch (Exception e) { Console.WriteLine(e); }
 
             Console.WriteLine("============view all keys&values=============");
-            var keys=Contacts.Keys;
+            var keys = Contacts.Keys;
 
-            var values=Contacts.Values;
+            var values = Contacts.Values;
 
             Console.WriteLine("keys");
-            foreach(var key in keys)
+            foreach (var key in keys)
             {
                 Console.WriteLine(key);
             }
@@ -91,7 +117,7 @@ namespace Assignment12
             ld.AddNameToDictionary(800, "Ali");
             ld.AddNameToDictionary(350, "Mona");
 
-           ld.PrintAllEntries();
+            ld.PrintAllEntries();
             Console.WriteLine("===============================");
             ld.checkValueByIndex(0);
             Console.WriteLine("===============================");
@@ -108,7 +134,7 @@ namespace Assignment12
         }
         public static void task1()
         {
-             List<int> grades = new List<int>() {85, 92, 78, 95, 88, 70, 100, 65};
+            List<int> grades = new List<int>() { 85, 92, 78, 95, 88, 70, 100, 65 };
             Console.WriteLine("\nprint all count , find last find");
             CollectionHelper<List<int>, int>.PrintCollection(grades);
             Console.WriteLine(grades.Count);
@@ -136,8 +162,8 @@ namespace Assignment12
             //task2();
             //task3();
 
-            task4();
-
+            //task4();
+            //task5();
         }
     }
 }
