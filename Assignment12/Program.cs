@@ -1,11 +1,41 @@
 ﻿using Assignment12.task1;
 using Assignment12.task2;
+using Assignment12.task4;
 
 namespace Assignment12
 {
     internal class Program
     {
 
+        public static void task4()
+        {
+            HashSet<string> emails =
+            new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            emails.Add("ahmed@test.com");
+            emails.Add("AHMED@test.com");
+            emails.Add("sara@test.com");
+            emails.Add("Sara@Test.Com");
+
+            Console.WriteLine("========Counting Emails========");
+            //2 email counted because 2 emails are repeated with different case and case no longer make a difference 
+            Console.WriteLine(emails.Count());
+
+
+            Console.WriteLine("================");
+
+            HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
+            HashSet<int> setB = new HashSet<int> { 4, 5, 6, 7, 8 };
+
+            HashSetHelper<int>.ShowUnion(setA, setB);
+            HashSetHelper<int>.ShowIntersection(setA, setB);
+            HashSetHelper<int>.ShowExceptWith(setA, setB);
+
+            Console.WriteLine("========IsSubsetOf========");
+
+            Console.WriteLine( setA.IsSubsetOf(new int[] { 1,2}));
+
+        }
         public static void task3()
         {
             Dictionary<string,int>Contacts=new Dictionary<string,int>();
@@ -104,7 +134,10 @@ namespace Assignment12
         {
             //task1();
             //task2();
-            task3();
+            //task3();
+
+            task4();
+
         }
     }
 }
