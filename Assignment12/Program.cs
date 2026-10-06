@@ -5,6 +5,53 @@ namespace Assignment12
 {
     internal class Program
     {
+
+        public static void task3()
+        {
+            Dictionary<string,int>Contacts=new Dictionary<string,int>();
+
+            Contacts["ahmed"] = 0100123456;
+            Contacts["bassem"] =0110234567;
+            Contacts["kamel"] = 0120345678;
+            Contacts["hassan"]= 0120456789;
+            Console.WriteLine("=============Adding duplicate============");
+            try
+            {
+
+            Contacts.Add("hassan", 01001777772);
+            }catch(Exception e) {Console.WriteLine(e);}
+
+            Console.WriteLine("==========Try adding duplicate===============");
+
+           Console.WriteLine( Contacts.TryAdd("hassan", 01001777772));
+
+
+            Console.WriteLine("==========Accessing non existant key===============");
+            try
+            {
+
+            Console.WriteLine(Contacts["gamal"]);
+            }catch(Exception e) {Console.WriteLine(e);}
+
+            Console.WriteLine("============view all keys&values=============");
+            var keys=Contacts.Keys;
+
+            var values=Contacts.Values;
+
+            Console.WriteLine("keys");
+            foreach(var key in keys)
+            {
+                Console.WriteLine(key);
+            }
+
+            Console.WriteLine("values");
+
+            foreach (var value in values)
+            {
+                Console.WriteLine(value);
+            }
+
+        }
         public static void task2()
         {
             leaderBoard ld = new leaderBoard();
@@ -56,7 +103,8 @@ namespace Assignment12
         static void Main(string[] args)
         {
             //task1();
-            task2();
+            //task2();
+            task3();
         }
     }
 }
