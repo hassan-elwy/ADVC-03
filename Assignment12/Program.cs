@@ -7,7 +7,45 @@ namespace Assignment12
 {
     internal class Program
     {
+        public static void task6()
+        {
+            Stack<string>stack=new Stack<string>();
 
+            stack.Push("google.com");
+            stack.Push("github.com");
+            stack.Push("stackoverflow.com");
+            stack.Push("youtube.com");
+            stack.Push("claude.ai");
+
+            Console.WriteLine("============peek===========");
+            Console.WriteLine("Current page:"+stack.Peek());
+
+            Console.WriteLine("============leaving pages===========");
+            Console.WriteLine("Leaving page: "+stack.Pop()); 
+            Console.WriteLine("Leaving page: "+stack.Pop()); 
+            Console.WriteLine("Leaving page: "+stack.Pop()); 
+
+            Console.WriteLine("============current page===========");
+            Console.WriteLine("Current page:"+stack.Peek());
+
+            Console.WriteLine("====popping to empty=====");
+            stack.Pop();
+            stack.Pop();
+
+            Console.Write("stack count:");
+            Console.WriteLine(stack.Count);
+
+            Console.WriteLine("======Executing TryPop:========");
+
+            stack.TryPop(out string res);
+            
+
+                Console.WriteLine(res is not null?res:"result is null" );
+            
+
+            
+            
+        }
         public static void task5()
         {
             Queue<string> queue = new Queue<string>();
@@ -164,6 +202,8 @@ namespace Assignment12
 
             //task4();
             //task5();
+
+            task6();
         }
     }
 }
